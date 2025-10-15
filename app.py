@@ -175,4 +175,20 @@ elif view_mode == "Educator View":
             
         st.markdown('</div>', unsafe_allow_html=True)
 
+# --- EXPLANATION SECTION ---
+st.write("") # Adds a little space
+with st.expander("How to Interpret the Results"):
+    st.markdown("""
+    * **AI Prediction:** This is the model's single best guess for the image's category.
+    * **Confidence:** This score represents how certain the model is about its prediction. A higher percentage means higher certainty.
+    * **Confidence Scores Chart:** This bar chart shows the model's confidence for *all* possible categories. It's useful to see not just the top guess but also what other categories the model considered.
+    """)
+
+with st.expander("How Does the AI Work?"):
+    st.markdown("""
+    This tool uses a deep learning technique called **transfer learning**.
+    1.  We started with a powerful, pre-existing model called **MobileNetV2**, which was trained by Google on millions of general images.
+    2.  Using **TensorFlow**, we retrained the final layers of this model using your specific `DFU` and `Pressure_ulcer` image datasets.
+    3.  This process taught the model to recognize the specific visual patterns, textures, and colors associated with different wound types and stages. When you upload a new image, the model analyzes its pixels to find these learned patterns and makes a prediction.
+    """)
 st.markdown('</div>', unsafe_allow_html=True) # Close the main container
